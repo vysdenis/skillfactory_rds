@@ -2,7 +2,7 @@
 """
 Created on Sat Mar 14 18:22:48 2020
 
-Modified code. Result: 8 attempts
+Modified code. Result: 5 attempts
 
 @author: vysdenis
 """
@@ -22,10 +22,10 @@ def score_game(game_core_v3):
 
 
 def game_core_v3(number):
-    '''Сначала устанавливаем любое число, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
+    '''Сначала устанавливаем число 50, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
        Функция принимает загаданное число и возвращает число попыток'''
     count = 0
-    predict = 50
+    predict = 50 #Начинаем с половины диапазона
     step = 0
     while number != predict:
         count+=1
@@ -33,6 +33,10 @@ def game_core_v3(number):
             step = 20
         elif count == 2:
             step = 10
+        elif count == 3:
+            step = 5
+        elif count == 4:
+            step = 3
         else:
             step = 1
         if number > predict: 
