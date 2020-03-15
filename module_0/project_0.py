@@ -2,7 +2,7 @@
 """
 Created on Sat Mar 14 18:22:48 2020
 
-Modified code. Result: 5 attempts
+Modified code. Binary search. Result: 5 attempts
 
 @author: vysdenis
 """
@@ -22,27 +22,20 @@ def score_game(game_core_v3):
 
 
 def game_core_v3(number):
-    '''Сначала устанавливаем число 50, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
-       Функция принимает загаданное число и возвращает число попыток'''
+    #Решаем задачу с помощью бинарного поиска
     count = 0
-    predict = 50 #Начинаем с половины диапазона
-    step = 0
-    while number != predict:
+    predict = 0 
+    low = 0
+    high = 100
+    while low <= high:
         count+=1
-        if count == 1:
-            step = 20
-        elif count == 2:
-            step = 10
-        elif count == 3:
-            step = 5
-        elif count == 4:
-            step = 3
+        predict = (low + high) // 2
+        if number < predict:
+            high = predict - 1
+        elif number > predict:
+            low = predict + 1
         else:
-            step = 1
-        if number > predict: 
-            predict += step
-        elif number < predict: 
-            predict -= step
+            break
     return(count) # выход из цикла, если угадали
 
 # Проверяем
