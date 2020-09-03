@@ -1,8 +1,8 @@
-# Информация
+# Skillfactory Реальный Data Science
 
 Здесь собраны проекты "Реального Data Science", выполненные при прохождении курса "Специализация Data Science" от Skillfactory.
 
-## Обзор проетов
+## Обзор проектов
 
 ### module_0/project_0
 
